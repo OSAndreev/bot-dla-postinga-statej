@@ -45,7 +45,7 @@ def summarization(article_text):
                                                   )
     except openai.error.InvalidRequestError:
         completion = openai.ChatCompletion.create(model=model,
-                                                  messages=sum_messages[:16000],
+                                                  messages=sum_messages[:10000],
                                                   )
 
     summary = completion.choices[0].message.content.encode('utf-8').decode('utf-8')
