@@ -39,9 +39,14 @@ def summarization(article_text):
         skip_special_tokens=True,
         clean_up_tokenization_spaces=False
     )'''
-    completion = openai.ChatCompletion.create(model=model,
-                                              messages=sum_messages,
-                                              )
+    try:
+        completion = openai.ChatCompletion.create(model=model,
+                                                  messages=sum_messages,
+                                                  )
+    except openai.error.InvalidRequestError:
+        completion = openai.ChatCompletion.create(model=model,
+                                                  messages=sum_messages[:16000],
+                                                  )
 
     summary = completion.choices[0].message.content.encode('utf-8').decode('utf-8')
     return summary
@@ -123,6 +128,7 @@ def get_text_messages(message):
                 )
                 # Отправляем ему все вместе
                 bot.send_message(message.from_user.id, 'Делаем пост...', parse_mode="Markdown")
+
                 completion = openai.ChatCompletion.create(model=model,
                                                           messages=messages,
                                                           )
