@@ -142,6 +142,8 @@ def get_text_messages(message):
             # Мы берем первый (нулевой) элемент-первый вариант ответа, сгенерированный моделью.
             bot.send_message(message.from_user.id, "Пост сделан!", parse_mode="Markdown")
             decoded_response = completion.choices[0].message.content.encode('utf-8').decode('utf-8')
+            messages.append({"role": "assistant",
+                 "content": decoded_response})
             bot.send_message(message.from_user.id, decoded_response, parse_mode="Markdown")
         # Если слишком часто отправляем запросы, он начинает ругаться
         except openai.error.RateLimitError:
