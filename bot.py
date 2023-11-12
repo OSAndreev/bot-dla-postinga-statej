@@ -95,7 +95,7 @@ def get_text_messages(message):
             prompt = "Представь, что ты копирайтер телеграм канала. У тебя есть несколько примеров постов в свой телеграм канал по статьям." \
                      "Сначала ты посмотришь их, а затем тебе надо будет написать такой же короткий пост про статью," \
                      "короткое содержание которой я отправлю тебе. Вот примеры коротких постов: "
-            with open('../../../../../Downloads/post_examples.txt', 'r', encoding='utf-8') as file:
+            with open('post_examples.txt', 'r', encoding='utf-8') as file:
                 posts = file.read()
 
             messages.append(
