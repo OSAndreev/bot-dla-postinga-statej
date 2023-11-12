@@ -140,7 +140,8 @@ def get_text_messages(message):
         # Если слишком часто отправляем запросы, он начинает ругаться
         except openai.error.RateLimitError:
             bot.send_message(message.from_user.id, 'Лимит по времени, напиши еще раз')
-
+        except openai.error.ServiceUnavailableError:
+            bot.send_message(message.from_user.id, 'Сервера OpenAI недоступны, повтори позже')
 
 
 bot.polling(none_stop=True)
