@@ -46,7 +46,7 @@ def summarization(article_text):
     summary = completion.choices[0].message.content.encode('utf-8').decode('utf-8')
     return summary
 
-bot = telebot.TeleBot('6553287137:AAG7shwwN9Vlun9US55pHdJ8dXscF3lLAV8')
+bot = telebot.TeleBot('6937186847:AAHGhMg2pPSvcAOsISPu8nun_8pyXWBNNV8')
 @bot.message_handler(content_types=['text'])
 # В этом участке кода мы объявили приемщика для текстовых сообщений и метод их обработки.
 # Поле content_types может принимать разные значения, и не только одно, например
