@@ -9,4 +9,4 @@ build:
 run:
   scriptName: bot_aiogram.py
   persistenceMount: /data
-  containerPort: 80
+  containerPort: 82
