@@ -104,7 +104,7 @@ async def parsing_channels(message, state):
     await state.update_data(post_dict=post_dict)
     await state.set_state(state=None)
     if not user_data['updating_channels']:
-        scheduler.add_job(update_posts, "interval", minutes=5, args=(state,))
+        scheduler.add_job(update_posts, "interval", hours=24, args=(state,))
         await state.update_data(updating_channels=True)
 
 
