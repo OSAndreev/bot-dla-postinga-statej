@@ -1,7 +1,5 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from aiogram.filters import Command
-from aiogram.types import Message
 from handlers import common
 import time
 
@@ -15,6 +13,7 @@ async def main():
     dp = Dispatcher()
     dp.include_router(common.router)
     await bot.delete_webhook(drop_pending_updates=True)
+    common.scheduler.start()
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
