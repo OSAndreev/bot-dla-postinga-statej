@@ -1,7 +1,10 @@
 import asyncio
+
+import httpx
 from aiogram import Bot, Dispatcher
 from handlers import common
 import time
+import openai
 
 
 
