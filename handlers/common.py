@@ -12,12 +12,7 @@ import httpx
 
 router = Router()
 scheduler = AsyncIOScheduler()
-client = openai.OpenAI(
-    api_key='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',
-    http_client=httpx.Client(
-        proxies="socks5://andreevos22:MJkXWdZjik@166.1.10.179:50101"
-    ),
-)
+client = #####
 
 
 class CurrentFunction(StatesGroup):
