@@ -5,12 +5,7 @@ import httpx
 import openai
 import asyncio
 
-client = openai.OpenAI(
-    api_key='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',
-    http_client=httpx.Client(
-          proxies="socks5://andreevos22:MJkXWdZjik@166.1.10.179:50101"
-    ),
-)
+client = #####
 async def get_channel_posts(api_id, api_hash, channel_username, limit=2):
     async with TelegramClient('session_name', api_id, api_hash) as client:
         await client.start()
@@ -22,8 +17,8 @@ async def get_channel_posts(api_id, api_hash, channel_username, limit=2):
     return posts, participants
 
 async def get_posts(channels: list, limit=1):
-    api_id = '22526632'
-    api_hash = 'a2adec3a58f237733ab5521b5f75337b'
+    api_id = ###
+    api_hash = ###
     post_dict = dict()
 
     for channel_username in channels:
